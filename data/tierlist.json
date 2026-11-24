@@ -55,6 +55,12 @@
       ]
     }
   ],
+  "labs": {
+    "Anthropic": "https://www.anthropic.com/news",
+    "OpenAI": "https://openai.com/news/",
+    "Google": "https://blog.google/technology/google-deepmind/",
+    "Meta": "https://ai.meta.com/blog/"
+  },
   "models": [
     {
       "id": "claude-fable-5-2",
@@ -67,6 +73,18 @@
         "code": 75.0,
         "agents": 77.5,
         "chat": 1502
+      },
+      "effort": "max",
+      "url": "https://www.benchleader.com/models/claude-fable-5-2",
+      "details": {
+        "reasoning": 74.4,
+        "math": 72.6,
+        "knowledge": 84.5,
+        "indexCi": 3.2,
+        "speed": 111.0,
+        "firstAnswer": 201.5,
+        "priceIn": 8.0,
+        "priceOut": 40.0
       }
     },
     {
@@ -80,6 +98,18 @@
         "code": 75.1,
         "agents": 70.8,
         "chat": 1512
+      },
+      "effort": "xhigh",
+      "url": "https://www.benchleader.com/models/gemini-4-neon",
+      "details": {
+        "reasoning": 71.9,
+        "math": 71.6,
+        "knowledge": 73.9,
+        "indexCi": 2.2,
+        "speed": 90.0,
+        "firstAnswer": 58.7,
+        "priceIn": 3.0,
+        "priceOut": 15.0
       }
     },
     {
@@ -93,6 +123,18 @@
         "code": 73.0,
         "agents": 71.2,
         "chat": 1527
+      },
+      "effort": "high",
+      "url": "https://www.benchleader.com/models/gemini-4-carbon",
+      "details": {
+        "reasoning": 72.0,
+        "math": 71.2,
+        "knowledge": 71.7,
+        "indexCi": 1.7,
+        "speed": 60.0,
+        "firstAnswer": 69.5,
+        "priceIn": 2.0,
+        "priceOut": 10.0
       }
     },
     {
@@ -106,6 +148,18 @@
         "code": 73.4,
         "agents": 67.3,
         "chat": 1467
+      },
+      "effort": "max",
+      "url": "https://www.benchleader.com/models/gpt-6-2-astra",
+      "details": {
+        "reasoning": 73.3,
+        "math": 71.1,
+        "knowledge": 74.2,
+        "indexCi": 2.2,
+        "speed": 49.0,
+        "firstAnswer": 149.4,
+        "priceIn": 8.0,
+        "priceOut": 40.0
       }
     },
     {
@@ -119,6 +173,18 @@
         "code": 77.6,
         "agents": 64.9,
         "chat": 1507
+      },
+      "effort": "max",
+      "url": "https://www.benchleader.com/models/claude-opus-5-5",
+      "details": {
+        "reasoning": 70.8,
+        "math": 72.6,
+        "knowledge": 71.2,
+        "indexCi": 3.1,
+        "speed": 116.0,
+        "firstAnswer": 326.5,
+        "priceIn": 4.0,
+        "priceOut": 20.0
       }
     },
     {
@@ -132,6 +198,18 @@
         "code": 72.5,
         "agents": 67.1,
         "chat": null
+      },
+      "effort": "max",
+      "url": "https://www.benchleader.com/models/gpt-6-astra",
+      "details": {
+        "reasoning": 71.7,
+        "math": 70.2,
+        "knowledge": 71.1,
+        "indexCi": 1.9,
+        "speed": 48.0,
+        "firstAnswer": 174.5,
+        "priceIn": 10.0,
+        "priceOut": 50.0
       }
     },
     {
@@ -145,6 +223,18 @@
         "code": 69.2,
         "agents": 62.7,
         "chat": null
+      },
+      "effort": "max",
+      "url": "https://www.benchleader.com/models/claude-fable-5-1",
+      "details": {
+        "reasoning": 68.1,
+        "math": 71.7,
+        "knowledge": 68.1,
+        "indexCi": 2.7,
+        "speed": 86.0,
+        "firstAnswer": 140.8,
+        "priceIn": 10.0,
+        "priceOut": 50.0
       }
     },
     {
@@ -158,6 +248,18 @@
         "code": 70.2,
         "agents": 64.2,
         "chat": null
+      },
+      "effort": "max",
+      "url": "https://www.benchleader.com/models/gpt-6-1-sol",
+      "details": {
+        "reasoning": 70.3,
+        "math": 71.2,
+        "knowledge": 70.4,
+        "indexCi": 1.8,
+        "speed": 49.0,
+        "firstAnswer": 106.4,
+        "priceIn": 2.0,
+        "priceOut": 10.0
       }
     },
     {
@@ -171,6 +273,18 @@
         "code": 65.9,
         "agents": 68.2,
         "chat": 1485
+      },
+      "effort": "max",
+      "url": "https://www.benchleader.com/models/gpt-5-6-sol",
+      "details": {
+        "reasoning": 64.4,
+        "math": 69.4,
+        "knowledge": 63.3,
+        "indexCi": 3.1,
+        "speed": 107.0,
+        "firstAnswer": 30.8,
+        "priceIn": 4.0,
+        "priceOut": 20.0
       }
     },
     {
@@ -184,6 +298,18 @@
         "code": 69.7,
         "agents": 66.9,
         "chat": 1504
+      },
+      "effort": "max",
+      "url": "https://www.benchleader.com/models/claude-fable-5",
+      "details": {
+        "reasoning": 67.2,
+        "math": 70.8,
+        "knowledge": 67.0,
+        "indexCi": 2.8,
+        "speed": 85.0,
+        "firstAnswer": 48.8,
+        "priceIn": 10.0,
+        "priceOut": 50.0
       }
     },
     {
@@ -197,6 +323,18 @@
         "code": 66.2,
         "agents": 59.6,
         "chat": 1520
+      },
+      "effort": "high",
+      "url": "https://www.benchleader.com/models/gemini-4-argon",
+      "details": {
+        "reasoning": 68.1,
+        "math": 69.5,
+        "knowledge": 67.0,
+        "indexCi": 2.5,
+        "speed": 81.0,
+        "firstAnswer": 35.8,
+        "priceIn": 2.0,
+        "priceOut": 10.0
       }
     },
     {
@@ -210,6 +348,18 @@
         "code": 65.1,
         "agents": 73.5,
         "chat": null
+      },
+      "effort": "not stated",
+      "url": "https://www.benchleader.com/models/muse-spark",
+      "details": {
+        "reasoning": 67.9,
+        "math": 59.2,
+        "knowledge": 62.7,
+        "indexCi": 3.6,
+        "speed": null,
+        "firstAnswer": null,
+        "priceIn": null,
+        "priceOut": null
       }
     },
     {
@@ -223,6 +373,18 @@
         "code": 69.4,
         "agents": 63.6,
         "chat": 1490
+      },
+      "effort": "xhigh",
+      "url": "https://www.benchleader.com/models/gemini-4-hydrogen",
+      "details": {
+        "reasoning": 70.1,
+        "math": 69.7,
+        "knowledge": 70.3,
+        "indexCi": 1.6,
+        "speed": 158.0,
+        "firstAnswer": 50.7,
+        "priceIn": 1.5,
+        "priceOut": 7.5
       }
     },
     {
@@ -236,6 +398,18 @@
         "code": 72.7,
         "agents": 65.7,
         "chat": null
+      },
+      "effort": "max",
+      "url": "https://www.benchleader.com/models/gpt-6-2-sol",
+      "details": {
+        "reasoning": 69.7,
+        "math": 66.4,
+        "knowledge": 65.6,
+        "indexCi": 2.4,
+        "speed": 67.0,
+        "firstAnswer": 87.7,
+        "priceIn": 2.0,
+        "priceOut": 10.0
       }
     },
     {
@@ -249,6 +423,18 @@
         "code": 66.6,
         "agents": 62.9,
         "chat": null
+      },
+      "effort": "max",
+      "url": "https://www.benchleader.com/models/claude-opus-5",
+      "details": {
+        "reasoning": 65.2,
+        "math": 69.4,
+        "knowledge": 64.7,
+        "indexCi": 1.9,
+        "speed": 76.0,
+        "firstAnswer": 29.0,
+        "priceIn": 5.0,
+        "priceOut": 25.0
       }
     },
     {
@@ -262,6 +448,18 @@
         "code": 60.6,
         "agents": 61.7,
         "chat": null
+      },
+      "effort": "xhigh",
+      "url": "https://www.benchleader.com/models/gpt-5-5",
+      "details": {
+        "reasoning": 67.2,
+        "math": 69.0,
+        "knowledge": 63.4,
+        "indexCi": 3.9,
+        "speed": 56.0,
+        "firstAnswer": 28.2,
+        "priceIn": 5.0,
+        "priceOut": 30.0
       }
     },
     {
@@ -275,6 +473,18 @@
         "code": 69.2,
         "agents": 70.4,
         "chat": 1473
+      },
+      "effort": "max",
+      "url": "https://www.benchleader.com/models/claude-sonnet-5-5",
+      "details": {
+        "reasoning": 66.7,
+        "math": 70.7,
+        "knowledge": 56.7,
+        "indexCi": 2.4,
+        "speed": 153.0,
+        "firstAnswer": 249.5,
+        "priceIn": 2.0,
+        "priceOut": 10.0
       }
     },
     {
@@ -288,6 +498,18 @@
         "code": 64.7,
         "agents": 62.9,
         "chat": null
+      },
+      "effort": "xhigh",
+      "url": "https://www.benchleader.com/models/gpt-5-4",
+      "details": {
+        "reasoning": 65.6,
+        "math": 64.6,
+        "knowledge": 59.8,
+        "indexCi": 2.6,
+        "speed": 80.0,
+        "firstAnswer": 83.7,
+        "priceIn": 2.5,
+        "priceOut": 15.0
       }
     },
     {
@@ -301,6 +523,18 @@
         "code": 68.3,
         "agents": 63.1,
         "chat": 1474
+      },
+      "effort": "max",
+      "url": "https://www.benchleader.com/models/gpt-6-1-terra",
+      "details": {
+        "reasoning": 67.2,
+        "math": 69.2,
+        "knowledge": 60.7,
+        "indexCi": 1.6,
+        "speed": 71.0,
+        "firstAnswer": 147.0,
+        "priceIn": 1.0,
+        "priceOut": 5.0
       }
     },
     {
@@ -314,6 +548,18 @@
         "code": 61.3,
         "agents": 80.2,
         "chat": null
+      },
+      "effort": "xhigh",
+      "url": "https://www.benchleader.com/models/gpt-5-3-codex",
+      "details": {
+        "reasoning": null,
+        "math": null,
+        "knowledge": null,
+        "indexCi": 6.9,
+        "speed": 104.0,
+        "firstAnswer": 33.1,
+        "priceIn": 1.8,
+        "priceOut": 14.0
       }
     },
     {
@@ -327,6 +573,18 @@
         "code": null,
         "agents": null,
         "chat": null
+      },
+      "effort": "not stated",
+      "url": "https://www.benchleader.com/models/gpt-5-4-pro",
+      "details": {
+        "reasoning": 70.4,
+        "math": null,
+        "knowledge": 74.0,
+        "indexCi": 4.3,
+        "speed": 9.0,
+        "firstAnswer": 11.2,
+        "priceIn": 30.0,
+        "priceOut": 180.0
       }
     },
     {
@@ -340,6 +598,18 @@
         "code": 65.6,
         "agents": 61.0,
         "chat": null
+      },
+      "effort": "max",
+      "url": "https://www.benchleader.com/models/gpt-6-sol",
+      "details": {
+        "reasoning": 64.7,
+        "math": 67.6,
+        "knowledge": 60.0,
+        "indexCi": 2.3,
+        "speed": 128.0,
+        "firstAnswer": 37.3,
+        "priceIn": 2.0,
+        "priceOut": 10.0
       }
     },
     {
@@ -353,6 +623,18 @@
         "code": 62.0,
         "agents": null,
         "chat": null
+      },
+      "effort": "high",
+      "url": "https://www.benchleader.com/models/claude-opus-4-6",
+      "details": {
+        "reasoning": 64.4,
+        "math": 63.4,
+        "knowledge": null,
+        "indexCi": 2.6,
+        "speed": 37.0,
+        "firstAnswer": 1.5,
+        "priceIn": 5.0,
+        "priceOut": 25.0
       }
     },
     {
@@ -366,6 +648,18 @@
         "code": 59.3,
         "agents": 62.8,
         "chat": null
+      },
+      "effort": "high",
+      "url": "https://www.benchleader.com/models/gemini-3-5-flash",
+      "details": {
+        "reasoning": 60.2,
+        "math": 57.6,
+        "knowledge": 63.1,
+        "indexCi": 2.7,
+        "speed": 168.0,
+        "firstAnswer": 11.8,
+        "priceIn": 1.5,
+        "priceOut": 9.0
       }
     },
     {
@@ -379,6 +673,18 @@
         "code": 62.2,
         "agents": 49.4,
         "chat": null
+      },
+      "effort": "high",
+      "url": "https://www.benchleader.com/models/gemini-3-7-flash",
+      "details": {
+        "reasoning": 67.3,
+        "math": 62.2,
+        "knowledge": 65.6,
+        "indexCi": 3.4,
+        "speed": 102.0,
+        "firstAnswer": 2.2,
+        "priceIn": 0.8,
+        "priceOut": 3.8
       }
     },
     {
@@ -392,6 +698,18 @@
         "code": 55.6,
         "agents": 72.2,
         "chat": null
+      },
+      "effort": "not stated",
+      "url": "https://www.benchleader.com/models/qwen3-6-max",
+      "details": {
+        "reasoning": 60.6,
+        "math": 64.4,
+        "knowledge": 59.3,
+        "indexCi": 3.2,
+        "speed": null,
+        "firstAnswer": null,
+        "priceIn": 1.3,
+        "priceOut": 7.8
       }
     },
     {
@@ -405,6 +723,18 @@
         "code": 67.8,
         "agents": 62.4,
         "chat": 1483
+      },
+      "effort": "max",
+      "url": "https://www.benchleader.com/models/kimi-k3-1-pro",
+      "details": {
+        "reasoning": 66.9,
+        "math": 65.3,
+        "knowledge": 65.1,
+        "indexCi": 2.4,
+        "speed": 34.0,
+        "firstAnswer": 140.7,
+        "priceIn": 2.0,
+        "priceOut": 10.0
       }
     },
     {
@@ -418,6 +748,18 @@
         "code": 54.6,
         "agents": 55.0,
         "chat": null
+      },
+      "effort": "xhigh",
+      "url": "https://www.benchleader.com/models/muse-spark-1-2",
+      "details": {
+        "reasoning": 68.3,
+        "math": 66.4,
+        "knowledge": 64.4,
+        "indexCi": 5.0,
+        "speed": 210.0,
+        "firstAnswer": 9.6,
+        "priceIn": 1.2,
+        "priceOut": 4.2
       }
     },
     {
@@ -431,6 +773,18 @@
         "code": 65.6,
         "agents": 50.2,
         "chat": null
+      },
+      "effort": "not stated",
+      "url": "https://www.benchleader.com/models/muse-spark-1-1",
+      "details": {
+        "reasoning": 67.9,
+        "math": 61.3,
+        "knowledge": 68.2,
+        "indexCi": 6.0,
+        "speed": 213.0,
+        "firstAnswer": 1.9,
+        "priceIn": 1.2,
+        "priceOut": 4.2
       }
     },
     {
@@ -444,6 +798,18 @@
         "code": null,
         "agents": null,
         "chat": null
+      },
+      "effort": "not stated",
+      "url": "https://www.benchleader.com/models/gpt-5-pro",
+      "details": {
+        "reasoning": 54.8,
+        "math": null,
+        "knowledge": 76.6,
+        "indexCi": 8.4,
+        "speed": 9.0,
+        "firstAnswer": 46.3,
+        "priceIn": 15.0,
+        "priceOut": 120.0
       }
     },
     {
@@ -457,6 +823,18 @@
         "code": 59.2,
         "agents": 58.0,
         "chat": null
+      },
+      "effort": "thinking",
+      "url": "https://www.benchleader.com/models/glm-5",
+      "details": {
+        "reasoning": 68.2,
+        "math": 63.6,
+        "knowledge": 57.5,
+        "indexCi": 3.6,
+        "speed": 69.0,
+        "firstAnswer": 22.7,
+        "priceIn": 1.0,
+        "priceOut": 3.2
       }
     },
     {
@@ -470,6 +848,18 @@
         "code": 64.1,
         "agents": 53.5,
         "chat": null
+      },
+      "effort": "max",
+      "url": "https://www.benchleader.com/models/kimi-k3",
+      "details": {
+        "reasoning": 58.1,
+        "math": 63.8,
+        "knowledge": 59.4,
+        "indexCi": 3.5,
+        "speed": 39.0,
+        "firstAnswer": 47.9,
+        "priceIn": 3.0,
+        "priceOut": 15.0
       }
     }
   ]
