@@ -1,0 +1,50 @@
+# Met à jour data/tierlist.json chaque lundi à partir de BenchLeader.
+# Commit uniquement si le fichier a changé, avec le GITHUB_TOKEN intégré (aucun token perso).
+name: Mise à jour des données
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # chaque lundi à 6h UTC
+  workflow_dispatch: # bouton "Run workflow" dans l'onglet Actions
+  push:
+    branches: [main]
+    paths: # se relance aussi quand le script ou ce fichier changent
+      - "scripts/**"
+      - ".github/workflows/update-data.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Tests du script
+        run: python -m unittest discover tests -v
+
+      # Si la récupération ou la validation échoue, le script sort en erreur
+      # sans toucher au fichier : le job apparaît en rouge et rien n'est commité.
+      - name: Récupérer et valider les données
+        run: python scripts/update_tierlist.py
+
+      - name: Commit si changement
+        run: |
+          if git diff --quiet -- data/tierlist.json; then
+            echo "Pas de changement, rien à commiter."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/tierlist.json
+          git commit -m "Données BenchLeader du $(python -c 'import json;print(json.load(open("data/tierlist.json"))["updatedAt"])')"
+          git push
