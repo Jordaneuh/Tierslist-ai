@@ -39,6 +39,18 @@ class Tests(unittest.TestCase):
         self.assertEqual(alpha[0]["scores"]["agents"], 55.0)
         self.assertEqual(alpha[0]["id"], "alpha")
 
+    def test_effort_non_precise_ignore_si_autre_config(self):
+        # Cas réel Claude Fable 5.1 : la ligne "not stated" (peu de résultats) est mieux classée.
+        lignes = [
+            ligne(1, "Delta", "not stated", index=67.0, coding=88.6),
+            ligne(2, "Delta", "max", index=66.7, coding=69.2),
+            ligne(3, "Epsilon", "not stated", index=61.0, coding=60.0),  # seule config : gardée
+        ] + self.lignes
+        modeles = {m["name"]: m for m in u.construire(source(lignes), None)["models"]}
+        self.assertEqual(modeles["Delta"]["scores"]["code"], 69.2)
+        self.assertEqual(modeles["Delta"]["scores"]["global"], 66.7)
+        self.assertEqual(modeles["Epsilon"]["scores"]["code"], 60.0)
+
     def test_score_absent_reste_null(self):
         lignes = [ligne(1, "Beta", "high", coding=None)] + self.lignes
         beta = next(m for m in u.construire(source(lignes), None)["models"] if m["name"] == "Beta")

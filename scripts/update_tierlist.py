@@ -73,6 +73,11 @@ def nombre(valeur):
     return round(float(valeur), 1)
 
 
+def effort_inconnu(ligne: dict) -> bool:
+    effort = str(ligne.get("effort") or "").strip().lower()
+    return effort in ("", "not stated", "unknown", "n/a")
+
+
 def regrouper_par_modele(lignes: list[dict]) -> list[dict]:
     """Une entrée par modèle, à partir de sa configuration la mieux classée."""
     par_modele: dict[str, list[dict]] = {}
@@ -84,6 +89,11 @@ def regrouper_par_modele(lignes: list[dict]) -> list[dict]:
 
     modeles = []
     for nom, configs in par_modele.items():
+        # Les lignes "effort non précisé" agrègent souvent quelques résultats isolés :
+        # leurs scores sont très incertains (ex. index ±7,6 contre ±3 pour les autres).
+        # On ne les utilise que si le modèle n'a aucune configuration à effort connu.
+        precises = [c for c in configs if not effort_inconnu(c)]
+        configs = precises or configs
         meilleure = configs[0]
         scores = {}
         for cle, champ in CHAMPS.items():
