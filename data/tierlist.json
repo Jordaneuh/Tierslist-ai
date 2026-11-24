@@ -109,19 +109,6 @@
       }
     },
     {
-      "id": "gpt-6-astra",
-      "name": "GPT-6 Astra",
-      "lab": "OpenAI",
-      "open": false,
-      "price": 20.0,
-      "scores": {
-        "global": 68.1,
-        "code": 83.2,
-        "agents": 63.6,
-        "chat": null
-      }
-    },
-    {
       "id": "claude-opus-5-5",
       "name": "Claude Opus 5.5",
       "lab": "Anthropic",
@@ -135,15 +122,28 @@
       }
     },
     {
+      "id": "gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "lab": "OpenAI",
+      "open": false,
+      "price": 20.0,
+      "scores": {
+        "global": 67.1,
+        "code": 72.5,
+        "agents": 67.1,
+        "chat": null
+      }
+    },
+    {
       "id": "claude-fable-5-1",
       "name": "Claude Fable 5.1",
       "lab": "Anthropic",
       "open": false,
       "price": 20.0,
       "scores": {
-        "global": 67.0,
-        "code": 88.6,
-        "agents": 64.1,
+        "global": 66.7,
+        "code": 69.2,
+        "agents": 62.7,
         "chat": null
       }
     },
@@ -351,7 +351,7 @@
       "scores": {
         "global": 62.5,
         "code": 62.0,
-        "agents": 58.1,
+        "agents": null,
         "chat": null
       }
     },
@@ -447,19 +447,6 @@
       }
     },
     {
-      "id": "kimi-k3",
-      "name": "Kimi K3",
-      "lab": "Moonshot AI",
-      "open": true,
-      "price": 6.0,
-      "scores": {
-        "global": 60.6,
-        "code": 61.8,
-        "agents": 52.8,
-        "chat": null
-      }
-    },
-    {
       "id": "glm-5",
       "name": "GLM-5",
       "lab": "Zhipu AI",
@@ -469,6 +456,19 @@
         "global": 60.3,
         "code": 59.2,
         "agents": 58.0,
+        "chat": null
+      }
+    },
+    {
+      "id": "kimi-k3",
+      "name": "Kimi K3",
+      "lab": "Moonshot AI",
+      "open": true,
+      "price": 6.0,
+      "scores": {
+        "global": 59.9,
+        "code": 64.1,
+        "agents": 53.5,
         "chat": null
       }
     }
