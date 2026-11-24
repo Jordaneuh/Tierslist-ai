@@ -63,10 +63,23 @@
       "open": false,
       "price": 16.0,
       "scores": {
-        "global": 70.2,
-        "code": 74.9,
-        "agents": null,
+        "global": 70.6,
+        "code": 75.0,
+        "agents": 77.5,
         "chat": 1502
+      }
+    },
+    {
+      "id": "gemini-4-neon",
+      "name": "Gemini 4 Neon",
+      "lab": "Google",
+      "open": false,
+      "price": 6.0,
+      "scores": {
+        "global": 68.9,
+        "code": 75.1,
+        "agents": 70.8,
+        "chat": 1512
       }
     },
     {
@@ -76,9 +89,9 @@
       "open": false,
       "price": 4.0,
       "scores": {
-        "global": 68.6,
-        "code": 72.9,
-        "agents": null,
+        "global": 68.8,
+        "code": 73.0,
+        "agents": 71.2,
         "chat": 1527
       }
     },
@@ -89,23 +102,23 @@
       "open": false,
       "price": 16.0,
       "scores": {
-        "global": 68.1,
-        "code": 73.2,
+        "global": 68.5,
+        "code": 73.4,
         "agents": 67.3,
         "chat": 1467
       }
     },
     {
-      "id": "gemini-4-neon",
-      "name": "Gemini 4 Neon",
-      "lab": "Google",
+      "id": "gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "lab": "OpenAI",
       "open": false,
-      "price": 6.0,
+      "price": 20.0,
       "scores": {
-        "global": 67.9,
-        "code": 73.6,
-        "agents": null,
-        "chat": 1512
+        "global": 68.1,
+        "code": 83.2,
+        "agents": 63.6,
+        "chat": null
       }
     },
     {
@@ -115,10 +128,36 @@
       "open": false,
       "price": 8.0,
       "scores": {
-        "global": 67.8,
+        "global": 68.0,
         "code": 77.6,
         "agents": 64.9,
         "chat": 1507
+      }
+    },
+    {
+      "id": "claude-fable-5-1",
+      "name": "Claude Fable 5.1",
+      "lab": "Anthropic",
+      "open": false,
+      "price": 20.0,
+      "scores": {
+        "global": 67.0,
+        "code": 88.6,
+        "agents": 64.1,
+        "chat": null
+      }
+    },
+    {
+      "id": "gpt-6-1-sol",
+      "name": "GPT-6.1 Sol",
+      "lab": "OpenAI",
+      "open": false,
+      "price": 4.0,
+      "scores": {
+        "global": 66.1,
+        "code": 70.2,
+        "agents": 64.2,
+        "chat": null
       }
     },
     {
@@ -128,7 +167,7 @@
       "open": false,
       "price": 8.0,
       "scores": {
-        "global": 65.1,
+        "global": 65.2,
         "code": 65.9,
         "agents": 68.2,
         "chat": 1485
@@ -142,9 +181,35 @@
       "price": 20.0,
       "scores": {
         "global": 65.1,
-        "code": 75.5,
+        "code": 69.7,
         "agents": 66.9,
         "chat": 1504
+      }
+    },
+    {
+      "id": "gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "lab": "Google",
+      "open": false,
+      "price": 4.0,
+      "scores": {
+        "global": 65.0,
+        "code": 66.2,
+        "agents": 59.6,
+        "chat": 1520
+      }
+    },
+    {
+      "id": "muse-spark",
+      "name": "Muse Spark",
+      "lab": "Meta",
+      "open": false,
+      "price": null,
+      "scores": {
+        "global": 64.9,
+        "code": 65.1,
+        "agents": 73.5,
+        "chat": null
       }
     },
     {
@@ -155,22 +220,9 @@
       "price": 3.0,
       "scores": {
         "global": 64.9,
-        "code": 67.3,
-        "agents": null,
+        "code": 69.4,
+        "agents": 63.6,
         "chat": 1490
-      }
-    },
-    {
-      "id": "gemini-4-argon",
-      "name": "Gemini 4 Argon",
-      "lab": "Google",
-      "open": false,
-      "price": 4.0,
-      "scores": {
-        "global": 64.8,
-        "code": 66.1,
-        "agents": 59.6,
-        "chat": 1520
       }
     },
     {
@@ -180,9 +232,35 @@
       "open": false,
       "price": 4.0,
       "scores": {
-        "global": 64.4,
-        "code": 72.6,
+        "global": 64.8,
+        "code": 72.7,
         "agents": 65.7,
+        "chat": null
+      }
+    },
+    {
+      "id": "claude-opus-5",
+      "name": "Claude Opus 5",
+      "lab": "Anthropic",
+      "open": false,
+      "price": 10.0,
+      "scores": {
+        "global": 64.6,
+        "code": 66.6,
+        "agents": 62.9,
+        "chat": null
+      }
+    },
+    {
+      "id": "gpt-5-5",
+      "name": "GPT-5.5",
+      "lab": "OpenAI",
+      "open": false,
+      "price": 11.2,
+      "scores": {
+        "global": 63.9,
+        "code": 60.6,
+        "agents": 61.7,
         "chat": null
       }
     },
@@ -193,10 +271,23 @@
       "open": false,
       "price": 4.0,
       "scores": {
-        "global": 63.3,
-        "code": 69.1,
+        "global": 63.6,
+        "code": 69.2,
         "agents": 70.4,
         "chat": 1473
+      }
+    },
+    {
+      "id": "gpt-5-4",
+      "name": "GPT-5.4",
+      "lab": "OpenAI",
+      "open": false,
+      "price": 5.6,
+      "scores": {
+        "global": 63.5,
+        "code": 64.7,
+        "agents": 62.9,
+        "chat": null
       }
     },
     {
@@ -206,23 +297,101 @@
       "open": false,
       "price": 2.0,
       "scores": {
-        "global": 63.1,
-        "code": 68.2,
+        "global": 63.4,
+        "code": 68.3,
         "agents": 63.1,
         "chat": 1474
       }
     },
     {
-      "id": "qwen3-8-max",
-      "name": "Qwen3.8 Max",
+      "id": "gpt-5-3-codex",
+      "name": "GPT-5.3-Codex",
+      "lab": "OpenAI",
+      "open": false,
+      "price": 4.8,
+      "scores": {
+        "global": 62.9,
+        "code": 61.3,
+        "agents": 80.2,
+        "chat": null
+      }
+    },
+    {
+      "id": "gpt-5-4-pro",
+      "name": "GPT-5.4 Pro",
+      "lab": "OpenAI",
+      "open": false,
+      "price": 67.5,
+      "scores": {
+        "global": 62.7,
+        "code": null,
+        "agents": null,
+        "chat": null
+      }
+    },
+    {
+      "id": "gpt-6-sol",
+      "name": "GPT-6 Sol",
+      "lab": "OpenAI",
+      "open": false,
+      "price": 4.0,
+      "scores": {
+        "global": 62.5,
+        "code": 65.6,
+        "agents": 61.0,
+        "chat": null
+      }
+    },
+    {
+      "id": "claude-opus-4-6",
+      "name": "Claude Opus 4.6",
+      "lab": "Anthropic",
+      "open": false,
+      "price": 10.0,
+      "scores": {
+        "global": 62.5,
+        "code": 62.0,
+        "agents": 58.1,
+        "chat": null
+      }
+    },
+    {
+      "id": "gemini-3-5-flash",
+      "name": "Gemini 3.5 Flash",
+      "lab": "Google",
+      "open": false,
+      "price": 3.4,
+      "scores": {
+        "global": 62.4,
+        "code": 59.3,
+        "agents": 62.8,
+        "chat": null
+      }
+    },
+    {
+      "id": "gemini-3-7-flash",
+      "name": "Gemini 3.7 Flash",
+      "lab": "Google",
+      "open": false,
+      "price": 1.5,
+      "scores": {
+        "global": 62.0,
+        "code": 62.2,
+        "agents": 49.4,
+        "chat": null
+      }
+    },
+    {
+      "id": "qwen3-6-max",
+      "name": "Qwen3.6 Max",
       "lab": "Alibaba",
       "open": false,
-      "price": 3.0,
+      "price": 2.9,
       "scores": {
-        "global": 60.8,
-        "code": 63.6,
-        "agents": 64.6,
-        "chat": 1484
+        "global": 62.0,
+        "code": 55.6,
+        "agents": 72.2,
+        "chat": null
       }
     },
     {
@@ -232,100 +401,74 @@
       "open": true,
       "price": 4.0,
       "scores": {
-        "global": 60.4,
-        "code": 58.9,
+        "global": 61.7,
+        "code": 67.8,
         "agents": 62.4,
         "chat": 1483
       }
     },
     {
-      "id": "muse-wonder",
-      "name": "Muse Wonder",
+      "id": "muse-spark-1-2",
+      "name": "Muse Spark 1.2",
       "lab": "Meta",
       "open": false,
-      "price": 8.0,
+      "price": 2.0,
       "scores": {
-        "global": 60.1,
-        "code": 62.5,
-        "agents": null,
-        "chat": 1512
+        "global": 61.5,
+        "code": 54.6,
+        "agents": 55.0,
+        "chat": null
       }
     },
     {
-      "id": "glm-5-3",
-      "name": "GLM 5.3",
+      "id": "muse-spark-1-1",
+      "name": "Muse Spark 1.1",
+      "lab": "Meta",
+      "open": false,
+      "price": 2.0,
+      "scores": {
+        "global": 61.5,
+        "code": 65.6,
+        "agents": 50.2,
+        "chat": null
+      }
+    },
+    {
+      "id": "gpt-5-pro",
+      "name": "GPT-5 Pro",
+      "lab": "OpenAI",
+      "open": false,
+      "price": 41.2,
+      "scores": {
+        "global": 61.3,
+        "code": null,
+        "agents": null,
+        "chat": null
+      }
+    },
+    {
+      "id": "kimi-k3",
+      "name": "Kimi K3",
+      "lab": "Moonshot AI",
+      "open": true,
+      "price": 6.0,
+      "scores": {
+        "global": 60.6,
+        "code": 61.8,
+        "agents": 52.8,
+        "chat": null
+      }
+    },
+    {
+      "id": "glm-5",
+      "name": "GLM-5",
       "lab": "Zhipu AI",
       "open": true,
-      "price": 2.15,
+      "price": 1.6,
       "scores": {
-        "global": 58.6,
-        "code": 59.5,
-        "agents": 58.7,
-        "chat": 1481
-      }
-    },
-    {
-      "id": "mimo-v2-6-pro",
-      "name": "MiMo-V2.6-Pro",
-      "lab": "Xiaomi",
-      "open": true,
-      "price": 0.544,
-      "scores": {
-        "global": 57.0,
-        "code": 58.3,
-        "agents": 52.8,
-        "chat": 1481
-      }
-    },
-    {
-      "id": "deepseek-v4-1-flash",
-      "name": "DeepSeek V4.1 Flash",
-      "lab": "DeepSeek",
-      "open": true,
-      "price": 0.525,
-      "scores": {
-        "global": 56.7,
-        "code": 61.8,
-        "agents": 55.2,
-        "chat": 1474
-      }
-    },
-    {
-      "id": "grok-4-7",
-      "name": "Grok 4.7",
-      "lab": "SpaceXAI",
-      "open": false,
-      "price": 3.0,
-      "scores": {
-        "global": 56.6,
-        "code": 60.2,
-        "agents": 54.9,
-        "chat": null
-      }
-    },
-    {
-      "id": "hy4",
-      "name": "Hy4",
-      "lab": "Tencent",
-      "open": true,
-      "price": 1.25,
-      "scores": {
-        "global": 56.0,
-        "code": 60.9,
-        "agents": 60.4,
-        "chat": null
-      }
-    },
-    {
-      "id": "mistral-large-4",
-      "name": "Mistral Large 4",
-      "lab": "Mistral AI",
-      "open": true,
-      "price": 1.05,
-      "scores": {
-        "global": 51.9,
-        "code": null,
-        "agents": 40.1,
+        "global": 60.3,
+        "code": 59.2,
+        "agents": 58.0,
         "chat": null
       }
     }
