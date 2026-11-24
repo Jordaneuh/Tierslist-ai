@@ -20,6 +20,15 @@ Chaque lundi à 6h UTC, l'action `Mise à jour des données` :
 En cas d'échec, le fichier n'est pas modifié et le job apparaît en rouge.
 On peut aussi la lancer à la main : onglet **Actions → Mise à jour des données → Run workflow**.
 
+### Contenu du fichier
+
+- `models[].details` : raisonnement, maths, connaissances, marge d'incertitude (`indexCi`),
+  vitesse (tokens/s), temps avant la réponse (s), prix entrée/sortie ($/M tokens) ;
+- `models[].effort` et `models[].url` : réglage retenu et page BenchLeader du modèle ;
+- `labs` : page officielle des nouveautés de chaque labo (liste `LIENS_LABOS` du script) ;
+- `changes` : ce qui a bougé depuis la version précédente (nouveaux modèles, retraits,
+  changements de tier par catégorie). S'il n'y a aucun changement, les derniers connus sont conservés.
+
 ### À savoir
 
 - **Catégorie Chat** : l'export BenchLeader ne contient pas l'Elo LMArena. Les valeurs `chat`

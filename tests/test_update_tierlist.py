@@ -51,6 +51,45 @@ class Tests(unittest.TestCase):
         self.assertEqual(modeles["Delta"]["scores"]["global"], 66.7)
         self.assertEqual(modeles["Epsilon"]["scores"]["code"], 60.0)
 
+    def test_details_et_lien(self):
+        l = ligne(1, "Zeta", "max", labo="Anthropic")
+        l.update({"reasoning": 70.0, "output_tokens_per_second": 85, "url": "https://www.benchleader.com/models/zeta"})
+        donnees = u.construire(source([l] + self.lignes), None)
+        zeta = next(m for m in donnees["models"] if m["name"] == "Zeta")
+        self.assertEqual(zeta["details"]["reasoning"], 70.0)
+        self.assertEqual(zeta["details"]["speed"], 85.0)
+        self.assertIsNone(zeta["details"]["math"])
+        self.assertEqual(zeta["effort"], "max")
+        self.assertEqual(zeta["url"], "https://www.benchleader.com/models/zeta")
+        self.assertEqual(donnees["labs"], {"Anthropic": "https://www.anthropic.com/news"})
+
+    def test_lien_hors_benchleader_ignore(self):
+        l = ligne(1, "Eta", "max")
+        l["url"] = "https://exemple.com/piege"
+        eta = next(m for m in u.construire(source([l] + self.lignes), None)["models"] if m["name"] == "Eta")
+        self.assertIsNone(eta["url"])
+
+    def test_changements_entre_deux_versions(self):
+        avant = u.construire(source(self.lignes), None)
+        # Modèle 11 bondit en tête, un nouveau modèle arrive, Modèle 10 disparaît.
+        lignes = [l for l in self.lignes if l["model"] != "Modèle 10"]
+        lignes = [dict(l, index=99.0) if l["model"] == "Modèle 11" else l for l in lignes]
+        lignes.append(ligne(50, "Nouveau", "high", index=50.0))
+        apres = u.construire(source(lignes), avant)
+        items = apres["changes"]["items"]
+        types = {(i["type"], i["name"]) for i in items}
+        self.assertIn(("nouveau", "Nouveau"), types)
+        self.assertIn(("retire", "Modèle 10"), types)
+        monte = next(i for i in items if i["name"] == "Modèle 11" and i["category"] == "global")
+        self.assertEqual((monte["type"], monte["to"]), ("monte", "S"))
+        self.assertEqual(apres["changes"]["since"], "2026-11-24")
+
+    def test_sans_changement_on_garde_les_derniers(self):
+        precedent = u.construire(source(self.lignes), None)
+        precedent["changes"] = {"date": "2026-11-17", "since": "2026-11-10", "items": [{"type": "nouveau", "id": "x", "name": "X"}]}
+        apres = u.construire(source(self.lignes), precedent)
+        self.assertEqual(apres["changes"]["date"], "2026-11-17")
+
     def test_score_absent_reste_null(self):
         lignes = [ligne(1, "Beta", "high", coding=None)] + self.lignes
         beta = next(m for m in u.construire(source(lignes), None)["models"] if m["name"] == "Beta")

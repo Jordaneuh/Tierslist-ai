@@ -48,6 +48,30 @@ CATEGORIES_PAR_DEFAUT = [
     {"key": "chat", "label": "Chat", "desc": "Préférence humaine (votes)", "unit": "Elo", "gaps": [10, 25, 40, 60]},
 ]
 
+# Détails affichés dans la fiche d'un modèle : clé dans tierlist.json -> champ BenchLeader.
+DETAILS = {
+    "reasoning": "reasoning",
+    "math": "math",
+    "knowledge": "knowledge",
+    "indexCi": "index_ci",
+    "speed": "output_tokens_per_second",
+    "firstAnswer": "time_to_first_answer_s",
+    "priceIn": "price_input_usd_per_mtok",
+    "priceOut": "price_output_usd_per_mtok",
+}
+
+# Pages officielles des nouveautés de chaque labo (bouton "Annonces" dans l'app).
+# Un labo absent de la liste n'a simplement pas de bouton : à compléter à la main.
+LIENS_LABOS = {
+    "Anthropic": "https://www.anthropic.com/news",
+    "OpenAI": "https://openai.com/news/",
+    "Google": "https://blog.google/technology/google-deepmind/",
+    "Meta": "https://ai.meta.com/blog/",
+    "Mistral AI": "https://mistral.ai/news",
+}
+
+TIERS = "SABCD"
+
 # Plages plausibles : au-delà, on considère que le format a changé et on s'arrête.
 PLAGES = {"global": (0, 100), "code": (0, 100), "agents": (0, 100), "chat": (800, 2000)}
 
@@ -100,6 +124,8 @@ def regrouper_par_modele(lignes: list[dict]) -> list[dict]:
             # Valeur de la meilleure configuration, sinon de la suivante qui en a une.
             scores[cle] = next((nombre(c.get(champ)) for c in configs if nombre(c.get(champ)) is not None), None)
         identifiant = str(meilleure.get("configuration_id") or "").split("@")[0] or slug(nom)
+        details = {cle: nombre(meilleure.get(champ)) for cle, champ in DETAILS.items()}
+        url = meilleure.get("url")
         modeles.append({
             "id": slug(identifiant),
             "name": nom,
@@ -107,6 +133,9 @@ def regrouper_par_modele(lignes: list[dict]) -> list[dict]:
             "open": meilleure.get("open_weights") is True,
             "price": nombre(meilleure.get("price_blended_usd_per_mtok")),
             "scores": scores,
+            "effort": str(meilleure.get("effort") or "") or None,
+            "url": url if isinstance(url, str) and url.startswith("https://www.benchleader.com/") else None,
+            "details": details,
         })
     return modeles
 
@@ -159,6 +188,51 @@ def valider(donnees: dict) -> None:
                 raise DonneesInvalides(f"{m['name']} : score {cle}={valeur} hors de [{bas}, {haut}]")
         if m["price"] is not None and not 0 <= m["price"] <= 1000:
             raise DonneesInvalides(f"{m['name']} : prix aberrant {m['price']}")
+        for cle, valeur in (m.get("details") or {}).items():
+            if valeur is not None and not 0 <= valeur <= 100_000:
+                raise DonneesInvalides(f"{m['name']} : détail {cle}={valeur} aberrant")
+
+
+def calculer_tiers(modeles: list[dict], categorie: dict) -> dict[str, str]:
+    """Même calcul que l'app (CalculTiers.kt) : id du modèle -> tier, pour une catégorie."""
+    cle, gaps = categorie["key"], categorie["gaps"][:4]
+    notes = {m["id"]: m["scores"].get(cle) for m in modeles if m["scores"].get(cle) is not None}
+    if not notes:
+        return {}
+    top = max(notes.values())
+    tiers = {}
+    for identifiant, score in notes.items():
+        ecart = top - score
+        index = next((i for i, g in enumerate(gaps) if ecart <= g + 1e-6), len(gaps))
+        tiers[identifiant] = TIERS[min(index, len(TIERS) - 1)]
+    return tiers
+
+
+def calculer_changements(anciens: list[dict], nouveaux: list[dict], categories: list[dict]) -> list[dict]:
+    """Ce qui a bougé entre deux versions : nouveaux modèles, modèles retirés, changements de tier."""
+    ids_anciens = {m["id"] for m in anciens}
+    ids_nouveaux = {m["id"] for m in nouveaux}
+    changements = [
+        {"type": "nouveau", "id": m["id"], "name": m["name"]} for m in nouveaux if m["id"] not in ids_anciens
+    ] + [
+        {"type": "retire", "id": m["id"], "name": m["name"]} for m in anciens if m["id"] not in ids_nouveaux
+    ]
+    noms = {m["id"]: m["name"] for m in nouveaux}
+    for categorie in categories:
+        avant, apres = calculer_tiers(anciens, categorie), calculer_tiers(nouveaux, categorie)
+        for identifiant, tier in apres.items():
+            ancien = avant.get(identifiant)
+            if ancien is None or ancien == tier:
+                continue
+            changements.append({
+                "type": "monte" if TIERS.index(tier) < TIERS.index(ancien) else "descend",
+                "id": identifiant,
+                "name": noms[identifiant],
+                "category": categorie["key"],
+                "from": ancien,
+                "to": tier,
+            })
+    return changements
 
 
 def construire(source: dict, existant: dict | None) -> dict:
@@ -177,9 +251,20 @@ def construire(source: dict, existant: dict | None) -> dict:
         "updatedAt": date,
         "source": {"name": "BenchLeader", "url": "https://www.benchleader.com", "license": "CC BY 4.0"},
         "categories": categories,
+        "labs": {lab: url for lab, url in LIENS_LABOS.items() if any(m["lab"] == lab for m in modeles)},
         "models": modeles,
     }
     valider(donnees)
+
+    # Changements depuis la version précédente. S'il n'y en a aucun, on garde les derniers connus.
+    changes = (existant or {}).get("changes")
+    anciens = (existant or {}).get("models")
+    if anciens:
+        elements = calculer_changements(anciens, modeles, categories)
+        if elements:
+            changes = {"date": date, "since": (existant or {}).get("updatedAt"), "items": elements}
+    if changes:
+        donnees["changes"] = changes
     return donnees
 
 
